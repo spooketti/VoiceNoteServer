@@ -1,7 +1,6 @@
 import openai
 
-# Set your OpenAI API key
-openai.api_key = "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"
+
 
 class Speechtonotes:
     def __init__(self):
