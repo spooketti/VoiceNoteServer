@@ -1,8 +1,8 @@
 from Speechtonotes import Speechtonotes
 tester=Speechtonotes()
-
-tester.update_text()
-# print(tester.getNotes())
-
 tester.speechToText("Yes.wav")
+tester.update_text()
+print(tester.getNotes())
+
+
 
