@@ -16,11 +16,11 @@ class Speechtonotes:
         with sr.AudioFile(filename) as audio_file:
             audio = recognizer.record(audio_file)
             text = recognizer.recognize_google(audio)
-        file=open("Lecture.txt","w")
+        file=open("test.txt","w")
         file.write(text)
         file.close()
     def update_text(self):
-        filereader=open("Lecture.txt","r")
+        filereader=open("test.txt","r")
         self.text=filereader.read()
         filereader.close()
 
