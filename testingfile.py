@@ -1,5 +1,6 @@
 from Speechtonotes import Speechtonotes
 tester=Speechtonotes()
 
+tester.update_text()
+print(tester.getNotes())
 
-print(tester.getNotes("I like to do stuff"))
