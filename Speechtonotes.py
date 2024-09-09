@@ -1,5 +1,5 @@
 import openai
-import speech_recognition
+import speech_recognition as sr
 
 
 class Speechtonotes:
@@ -9,12 +9,12 @@ class Speechtonotes:
         pass  
     
     
-    def speechToText():
-        listner = speech_recognition.Recognizer()
-        audio_file = speech_recognition.AudioFile('example.mp3')
-        audio = speech_recognition.record(audio_file)
-        text = speech_recognition.recognize_google(audio)
-        print(text)
+    def speechToText(self, filename):
+        recognizer = sr.Recognizer()
+        with sr.AudioFile(filename) as audio_file:
+            audio = recognizer.record(audio_file)
+            text = recognizer.recognize_google(audio)
+            print(text)
     def update_text(self):
         filereader=open("Lecture.txt","r")
         self.text=filereader.read()
