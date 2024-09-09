@@ -1,3 +1,2 @@
 .venv
-apikey.sh
-apikey.py
+.env
