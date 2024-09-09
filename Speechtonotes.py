@@ -4,7 +4,7 @@ import speech_recognition as sr
 
 class Speechtonotes:
     def __init__(self):
-        openai.api_key = "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"
+        openai.api_key = "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"
         self.text="default text"
         pass  
     
