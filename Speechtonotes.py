@@ -1,10 +1,11 @@
 import openai
 import speech_recognition as sr
-
+import os
 
 class Speechtonotes:
     def __init__(self):
-        openai.api_key = "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"
+        openai.api_key = os.getenv('GPT_KEY')
+
         self.text="default text"
         pass  
     
