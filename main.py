@@ -14,8 +14,7 @@ def home():
 @app.route("/recieveAudio/",methods=["POST"])
 def recieveAudio():
     audioFile = request.files["why"]
-    speechNoteClass.speechToTextWithNotes(audioFile)
-    return "stuff"
+    return speechNoteClass.speechToTextWithNotes(audioFile)
 
 
 @app.before_request

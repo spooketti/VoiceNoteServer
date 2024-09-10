@@ -24,7 +24,7 @@ class Speechtonotes:
         self.text=filereader.read()
         filereader.close()
         
-    def speechToTextWithNotes(filename):
+    def speechToTextWithNotes(self, filename):
         recognizer = sr.Recognizer()
         with sr.AudioFile(filename) as audio_file:
             audio = recognizer.record(audio_file)
