@@ -1,23 +1,20 @@
 from flask import Flask, request, jsonify, make_response, Response
 from threading import Thread
 from init import app
-import jwt
 from init import cors
 import time
-import datetime
-import os
-
+from Speechtonotes import Speechtonotes
+speechNoteClass=Speechtonotes()
 
 @app.route('/')
 def home():
     return "VoiceNote Server"
 
 
-@app.route("/recieveAudio",methods=["POST"])
+@app.route("/recieveAudio/",methods=["POST"])
 def recieveAudio():
-    print('here')
-    data = request.get_json()
-    return "stuff"
+    audioFile = request.files["why"]
+    return speechNoteClass.speechToTextWithNotes(audioFile)
 
 
 @app.before_request
