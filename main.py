@@ -15,6 +15,7 @@ def home():
 
 @app.route("/recieveAudio",methods=["POST"])
 def recieveAudio():
+    print('here')
     data = request.get_json()
     return "stuff"
 
