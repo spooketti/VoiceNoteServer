@@ -5,6 +5,8 @@ from init import cors
 import time
 from Speechtonotes import Speechtonotes
 speechNoteClass=Speechtonotes()
+from io import BytesIO
+from pydub import AudioSegment
 
 @app.route('/')
 def home():
@@ -14,7 +16,9 @@ def home():
 @app.route("/recieveAudio/",methods=["POST"])
 def recieveAudio():
     audioFile = request.files.get("why")
-    print(audioFile.mimetype)
+
+    # Convert the in-memory bytes to a format readable by pydub
+    # audio = AudioSegment.from_file(audioFile, format='wav')  # Adjust format if needed
     return speechNoteClass.speechToTextWithNotes(audioFile)
 
 
