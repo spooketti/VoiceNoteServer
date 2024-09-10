@@ -13,7 +13,8 @@ def home():
 
 @app.route("/recieveAudio/",methods=["POST"])
 def recieveAudio():
-    audioFile = request.files["why"]
+    audioFile = request.files.get("why")
+    print(audioFile.mimetype)
     return speechNoteClass.speechToTextWithNotes(audioFile)
 
 
